@@ -1,0 +1,86 @@
+:root {
+  --celtics-green: #007a33;
+  --celtics-deep-green: #005a27;
+  --celtics-gold: #c8a951;
+  --page-background: #f7f9f6;
+  --body-text: #26352d;
+}
+
+body {
+  color: var(--body-text);
+  background-color: var(--page-background);
+}
+
+.site-nav {
+  background-color: var(--celtics-green);
+  border-bottom: 3px solid var(--celtics-gold);
+}
+
+.site-nav .navbar-brand,
+.site-nav .nav-link {
+  color: #fff;
+}
+
+.site-nav .navbar-brand:hover,
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus {
+  color: var(--celtics-gold);
+}
+
+a:not(.btn) {
+  color: var(--celtics-green);
+}
+
+a:not(.btn):hover {
+  color: var(--celtics-deep-green);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--celtics-deep-green);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: var(--celtics-green);
+  border-color: var(--celtics-green);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--celtics-deep-green);
+  border-color: var(--celtics-deep-green);
+}
+
+.card {
+  border-color: #d7e2d9;
+}
+
+.card-title {
+  color: var(--celtics-deep-green);
+}
+
+font[color="Green"] {
+  color: var(--celtics-green) !important;
+}
+
+font[color="Red"] {
+  color: var(--celtics-gold) !important;
+}
+
+font[color="Blue"] {
+  color: #42604f !important;
+}
+
+.my-legend ul.legend-labels li span[style*="background:Green"] {
+  background: var(--celtics-green) !important;
+}
+
+.my-legend ul.legend-labels li span[style*="background:Red"] {
+  background: var(--celtics-gold) !important;
+}
+
+.my-legend ul.legend-labels li span[style*="background:Blue"] {
+  background: #42604f !important;
+}
