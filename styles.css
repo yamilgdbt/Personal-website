@@ -267,3 +267,132 @@ hr {
     padding-bottom: 22px;
   }
 }
+
+
+/* Additional layout polish */
+.container {
+  max-width: 1120px;
+}
+
+main,
+.container.mt-3,
+.container.mt-4 {
+  padding-top: 24px;
+  padding-bottom: 48px;
+}
+
+h1 {
+  margin-top: 18px;
+  margin-bottom: 24px;
+  letter-spacing: -1.2px;
+}
+
+h2,
+h3 {
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+p {
+  max-width: 78ch;
+  font-size: 1.02rem;
+}
+
+.site-nav .navbar-brand img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.site-nav .nav-link {
+  border-radius: 7px;
+  margin-left: 4px;
+}
+
+.site-nav .nav-item.active .nav-link {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.13);
+}
+
+.container img:not(.navbar-brand img) {
+  box-shadow: var(--shadow);
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+main ul li,
+.container > ul li {
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+#championships {
+  padding-top: 14px;
+  border-bottom: 2px solid var(--celtics-gold);
+  display: inline-block;
+}
+
+#championships + ul,
+.container ul:has(font[color="Green"]) {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 22px 28px 22px 44px;
+  box-shadow: var(--shadow);
+}
+
+#championships + ul li,
+.container ul:has(font[color="Green"]) li {
+  padding: 8px 0;
+  border-bottom: 1px solid #edf1ed;
+}
+
+#championships + ul li:last-child,
+.container ul:has(font[color="Green"]) li:last-child {
+  border-bottom: 0;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(200, 169, 81, 0.7);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .site-nav .navbar-brand {
+    font-size: 1.05rem;
+  }
+
+  .site-nav .navbar-brand img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .container img {
+    height: auto;
+  }
+
+  #championships + ul,
+  .container ul:has(font[color="Green"]) {
+    padding: 16px 18px 16px 34px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
