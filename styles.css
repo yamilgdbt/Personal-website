@@ -1,24 +1,61 @@
+
 :root {
   --celtics-green: #007a33;
-  --celtics-deep-green: #005a27;
+  --celtics-deep-green: #004d25;
+  --celtics-dark: #123524;
   --celtics-gold: #c8a951;
-  --page-background: #f7f9f6;
-  --body-text: #26352d;
+
+  --page-background: #f4f7f4;
+  --card-background: #ffffff;
+  --body-text: #293b31;
+  --muted-text: #718078;
+  --border-color: #e2eae4;
+
+  --shadow: 0 8px 24px rgba(0, 45, 20, 0.07);
+  --shadow-hover: 0 14px 32px rgba(0, 45, 20, 0.13);
+
+  --transition: all 0.25s ease;
+}
+
+/* General page styling */
+* {
+  box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   color: var(--body-text);
-  background-color: var(--page-background);
+  background: var(--page-background);
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
+/* Navigation */
 .site-nav {
-  background-color: var(--celtics-green);
+  background: linear-gradient(
+    110deg,
+    var(--celtics-deep-green),
+    var(--celtics-green)
+  );
   border-bottom: 3px solid var(--celtics-gold);
+  box-shadow: 0 4px 16px rgba(0, 40, 18, 0.16);
+  padding: 12px 0;
 }
 
-.site-nav .navbar-brand,
-.site-nav .nav-link {
+.site-nav .navbar-brand {
   color: #fff;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+}
+
+.site-nav .nav-link {
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 600;
+  padding: 10px 15px;
+  transition: var(--transition);
 }
 
 .site-nav .navbar-brand:hover,
@@ -27,52 +64,165 @@ body {
   color: var(--celtics-gold);
 }
 
+.site-nav .nav-link:hover {
+  transform: translateY(-2px);
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+  color: var(--celtics-deep-green);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+/* Paragraphs */
+p {
+  color: var(--body-text);
+  line-height: 1.8;
+}
+
+small,
+.text-muted {
+  color: var(--muted-text) !important;
+}
+
+/* Links */
 a:not(.btn) {
   color: var(--celtics-green);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
 a:not(.btn):hover {
   color: var(--celtics-deep-green);
 }
 
-h1,
-h2,
-h3 {
-  color: var(--celtics-deep-green);
-}
-
+/* Buttons */
 .btn-primary {
   color: #fff;
-  background-color: var(--celtics-green);
-  border-color: var(--celtics-green);
+  background: var(--celtics-green);
+  border: 1px solid var(--celtics-green);
+  border-radius: 8px;
+  padding: 11px 22px;
+  font-weight: 700;
+  transition: var(--transition);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-  background-color: var(--celtics-deep-green);
+  color: #fff;
+  background: var(--celtics-deep-green);
   border-color: var(--celtics-deep-green);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 90, 39, 0.2);
 }
 
+/* Cards */
 .card {
-  border-color: #d7e2d9;
+  background: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-body {
+  padding: 22px;
 }
 
 .card-title {
   color: var(--celtics-deep-green);
+  font-weight: 750;
+  margin-bottom: 12px;
 }
 
+.card img {
+  object-fit: cover;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+}
+
+.img-fluid {
+  border-radius: 12px;
+}
+
+/* Tables */
+table {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background: var(--celtics-deep-green);
+  color: #fff;
+}
+
+th,
+td {
+  padding: 13px 16px !important;
+  border-color: var(--border-color) !important;
+}
+
+/* Forms */
+input,
+select,
+textarea {
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--celtics-green) !important;
+  box-shadow: 0 0 0 3px rgba(0, 122, 51, 0.12) !important;
+  outline: none;
+}
+
+/* Chart text colors */
+.text-green,
 font[color="Green"] {
   color: var(--celtics-green) !important;
 }
 
+.text-gold,
 font[color="Red"] {
   color: var(--celtics-gold) !important;
 }
 
+.text-muted-green,
 font[color="Blue"] {
   color: #42604f !important;
 }
 
+/* Chart legends */
 .my-legend ul.legend-labels li span[style*="background:Green"] {
   background: var(--celtics-green) !important;
 }
@@ -83,4 +233,37 @@ font[color="Blue"] {
 
 .my-legend ul.legend-labels li span[style*="background:Blue"] {
   background: #42604f !important;
+}
+
+/* Section spacing */
+section {
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+/* Horizontal dividers */
+hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 30px 0;
+}
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+  .site-nav {
+    padding: 8px 0;
+  }
+
+  .site-nav .nav-link {
+    padding: 8px 10px;
+  }
+
+  .card-body {
+    padding: 17px;
+  }
+
+  section {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
 }
